@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1691572221 source:c:\users\anush\onedrive\documents\academics\sem3\ds lab\lab_2\lab_exercises\string_handling.c
+	<stdio.h>
+	<stdlib.h>
+
+1691605938 source:c:\users\anush\onedrive\documents\academics\sem3\ds lab\lab_2\lab_exercises\students.c
+	<stdio.h>
+	<stdlib.h>
+
+1691607111 source:c:\users\anush\onedrive\documents\academics\sem3\ds lab\lab_2\lab_exercises\time.c
+	<stdio.h>
+	<stdlib.h>
+

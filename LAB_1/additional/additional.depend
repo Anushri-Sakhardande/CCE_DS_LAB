@@ -1,0 +1,37 @@
+# depslib dependency file v1.0
+1691472881 source:d:\220953138\lab_2\additional\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1691502610 source:c:\users\anush\onedrive\documents\academics\sem3\ds lab\lab_1\additional\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1691502754 source:c:\users\anush\onedrive\documents\academics\sem3\ds lab\lab_1\additional\matrix_multi.c
+	<stdio.h>
+	<stdlib.h>
+
+1691502678 source:c:\users\anush\onedrive\documents\academics\sem3\ds lab\lab_1\additional\multiply.c
+	<stdio.h>
+	<stdlib.h>
+
+1691507050 source:c:\users\anush\onedrive\documents\academics\sem3\ds lab\lab_1\additional\selection_sort.c
+	<stdio.h>
+	<stdlib.h>
+
+1691502666 source:c:\users\anush\onedrive\documents\academics\sem3\ds lab\lab_1\additional\binary_search.c
+	<stdio.h>
+	<stdlib.h>
+
+1691503664 source:c:\users\anush\onedrive\documents\academics\sem3\ds lab\lab_1\additional\add_matrix.c
+	<stdio.h>
+	<stdlib.h>
+
+1691515405 source:c:\users\anush\onedrive\documents\academics\sem3\ds lab\lab_1\additional\magic_square.c
+	<stdio.h>
+	<stdlib.h>
+
+1691503647 source:c:\users\anush\onedrive\documents\academics\sem3\ds lab\lab_1\additional\third_matrix.c
+	<stdio.h>
+	<stdlib.h>
+
