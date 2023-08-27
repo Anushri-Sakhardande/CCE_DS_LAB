@@ -1,0 +1,20 @@
+# depslib dependency file v1.0
+1692681503 source:d:\220953138\lab_3\stack_try\main.c
+	"charstack_attempt.h"
+	<string.h>
+
+1692678906 d:\220953138\lab_3\stack_try\stack_attempt.h
+	<stdio.h>
+	<stdbool.h>
+
+1692680785 source:d:\220953138\lab_3\stack_try\base_change.c
+	"stack_attempt.h"
+
+1692680150 d:\220953138\lab_3\stack_try\charstack_attempt.h
+	<stdio.h>
+	<stdbool.h>
+
+1692681614 source:d:\220953138\lab_3\stack_try\palindrome.c
+	"charstack_attempt.h"
+	<string.h>
+

@@ -3,63 +3,63 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-struct time
+typedef struct 
 {
     int hour;
-    int minute;
-    int second;
-};
+    int min;
+    int sec;
+}time;
 
 //function to add times
-struct time addition(struct time time1,struct time time2)
+time addition(time t1, time t2)
 {
-    struct time added;
+     time added;
     int addSeconds;
-    addSeconds = (time1.hour+time2.hour)*3600+(time1.minute+time2.minute)*60+(time1.second+time2.second);
+    addSeconds = (t1.hour+t2.hour)*3600+(t1.min+t2.min)*60+(t1.sec+t2.sec);
     added.hour = addSeconds/3600;
-    added.minute = (addSeconds%3600)/60;
-    added.second = (addSeconds%60);
+    added.min = (addSeconds%3600)/60;
+    added.sec = (addSeconds%60);
     return added;
 }
 
 //function to subtract times
-struct time difference(struct time time1,struct time time2)
+ time difference( time t1, time t2)
 {
-    struct time diff;
+     time diff;
     int diffSeconds;
-    diffSeconds = (time1.hour-time2.hour)*3600+(time1.minute-time2.minute)*60+(time1.second-time2.second);
+    diffSeconds = abs((t1.hour-t2.hour)*3600+(t1.min-t2.min)*60+(t1.sec-t2.sec));
     diff.hour = diffSeconds/3600;
-    diff.minute = (diffSeconds%3600)/60;
-    diff.second = (diffSeconds%60);
+    diff.min = (diffSeconds%3600)/60;
+    diff.sec = (diffSeconds%60);
     return diff;
 }
 
 //read the time
-void time_read(struct time *t)
+void time_read( time *t)
 {
-    printf("Enter the time in hour minutes seconds format\n");
+    printf("Enter the time in hour mins seconds format\n");
     scanf("%d",&t->hour);
-    scanf("%d",&t->minute);
-    scanf("%d",&t->second);
+    scanf("%d",&t->min);
+    scanf("%d",&t->sec);
 }
 
 //display the time
-void time_display(struct time t)
+void time_display( time t)
 {
-    printf("%d:%d:%d\n",t.hour,t.minute,t.second);
+    printf("%d:%d:%d\n",t.hour,t.min,t.sec);
 }
 
 int main()
 {
-    struct time time1,time2;
-    time_read(&time1);
-    time_read(&time2);
+     time t1,t2;
+    time_read(&t1);
+    time_read(&t2);
     printf("Time 1\n");
-    time_display(time1);
+    time_display(t1);
     printf("Time 2\n");
-    time_display(time2);
-    struct time add = addition(time1,time2);
-    struct time diff = difference(time1,time2);
+    time_display(t2);
+     time add = addition(t1,t2);
+     time diff = difference(t1,t2);
     printf("The sum of times is\n");
     time_display(add);
     printf("The difference of times is\n");

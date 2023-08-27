@@ -1,4 +1,4 @@
-//STRING HANDLING
+// STRING HANDLING
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -12,7 +12,7 @@ int length(char str[])
 }
 
 // Function for string concatenation
-char *concatenate(char str1[], char str2[])
+char* concatenate(char str1[], char str2[])
 {
     int i;
     int len1 = length(str1);
@@ -21,6 +21,7 @@ char *concatenate(char str1[], char str2[])
     {
         str1[i + len1] = str2[i];
     }
+    str1[len1+len2]='\0';
     return str1;
 }
 
@@ -40,7 +41,7 @@ int compare(char str1[], char str2[])
 }
 
 // Function for string insertion
-char *insert(char str1[], char str2[], int location)
+char* insert(char str1[], char str2[], int location)
 {
     int i;
     int len1 = length(str1);
@@ -57,24 +58,24 @@ char *insert(char str1[], char str2[], int location)
 }
 
 // Function for string deletion
-char *deletion(char str1[], char str2[])
+char* deletion(char str1[], char str2[])
 {
     int i, j = 0, location, found = 0;
     int len1 = length(str1);
     int len2 = length(str2);
-    for (i = 0; i < len1-len2; i++)
+    for (i = 0; i < len1 - len2; i++)
     {
-        for(j=0; j<len2; j++)
+        for (j = 0; j < len2; j++)
         {
-            if(str1[i+j]!=str2[j])
+            if (str1[i + j] != str2[j])
             {
                 break;
             }
         }
-        if(j==len2)
+        if (j == len2)
         {
             location = i;
-            found=1;
+            found = 1;
             break;
         }
     }

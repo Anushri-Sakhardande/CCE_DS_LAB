@@ -9,9 +9,11 @@ struct student
     int rollno;
     float grade;
 };
+typedef struct student stud;
+
 
 //read the information of students
-void read(struct student *p,int n)
+void read(stud *p,int n)
 {
     int i;
     for(i=0;i<n;i++)
@@ -24,22 +26,22 @@ void read(struct student *p,int n)
 }
 
 //display the sorted information
-void display(struct student *p,int n)
+void display( stud *p,int n)
 {
     int i;
     for(i=0;i<n;i++)
     {
         printf("Roll no:%d\n",(p+i)->rollno);
-        printf("%s\n",(p+i)->name);
-        printf("%0.2f\n",(p+i)->grade);
+        printf("Name:%s\n",(p+i)->name);
+        printf("Grade:%0.2f\n",(p+i)->grade);
         printf("\n");
     }
 }
 
 //sort roll no wise
-void sort(struct student *p,int n)
+void sort(stud *p,int n)
 {
-    struct student temp;
+    stud temp;
     int i,j,selected;
     for (i = 0; i < n - 1; i++)
     {
@@ -60,15 +62,16 @@ void sort(struct student *p,int n)
     }
 }
 
-int students_main()
+int main()
 {
     int n;
-    struct student list[10],*ptr;
+    stud list[10],*ptr;
     ptr = list;
     printf("Enter the number of students");
     scanf("%d",&n);
     read(ptr,n);
     sort(ptr,n);
+    printf("sorted List");
     display(ptr,n);
     return 0;
 }
