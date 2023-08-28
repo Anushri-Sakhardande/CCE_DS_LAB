@@ -1,7 +1,7 @@
 #include "charstack_attempt.h"
 #include <string.h>
 
-int pmain()
+int main()
 {
     char palin[30];
     element e;

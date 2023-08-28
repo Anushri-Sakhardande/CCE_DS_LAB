@@ -1,8 +1,8 @@
 #include "stack_attempt.h"
 
-int bmain()
+int main()
 {
-    int decimal,base=0,changed;
+    int decimal,base,changed=0;
     element digit;
     printf("Enter the decimal number");
     scanf("%d",&decimal);
