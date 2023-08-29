@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1693283970 source:d:\220953138\lab_4\circular_q.c
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+
+1693286545 source:d:\220953138\lab_4\sparse_mat.c
+	<stdio.h>
+
+1693287206 source:d:\220953138\lab_4\sparse_mat_fast.c
+	<stdio.h>
+	<stdlib.h>
+
