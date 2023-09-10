@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1693889759 source:d:\220953138\lab_5\evalpost\evalpostfix.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<math.h>
+	"ctype.h"
+	"floatStack.h"
+
+1693889297 d:\220953138\lab_5\evalpost\floatstack.h
+	<stdbool.h>
+

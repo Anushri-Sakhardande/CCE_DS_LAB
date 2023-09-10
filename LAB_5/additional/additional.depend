@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1694365886 source:c:\users\anush\onedrive\documents\academics\sem3\ds lab\lab_5\additional\main.c
+	<stdio.h>
+	<stdlib.h>
+	"stack.h"
+
+1694365515 c:\users\anush\onedrive\documents\academics\sem3\ds lab\lab_5\additional\stack.h
+	<stdio.h>
+	<stdbool.h>
+

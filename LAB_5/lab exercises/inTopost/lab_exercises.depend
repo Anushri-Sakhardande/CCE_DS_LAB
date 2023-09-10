@@ -1,0 +1,33 @@
+# depslib dependency file v1.0
+1693887138 source:d:\220953138\lab_5\lab_exercises\evalpostfix.c
+	<stdio.h>
+	<stdlib.h>
+
+1693887135 source:d:\220953138\lab_5\lab_exercises\postfixtoinfix.c
+	<stdio.h>
+	<stdlib.h>
+
+1693887475 source:d:\220953138\lab_5\lab_exercises\infixtopostfix.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	"charStack.h"
+
+1693887121 d:\220953138\lab_5\lab_exercises\charstack.h
+	<stdbool.h>
+
+1693887135 source:d:\220953138\lab_5\intopost\postfixtoinfix.c
+	<stdio.h>
+	<stdlib.h>
+
+1693889832 source:d:\220953138\lab_5\intopost\infixtopostfix.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	"charStack.h"
+
+1693887121 d:\220953138\lab_5\intopost\charstack.h
+	<stdbool.h>
+

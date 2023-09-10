@@ -105,7 +105,7 @@ int main()
 {
     term T[MAX_SIZE];
     finit();
-    printf("Entered matrix is;\n");
+    printf("Entered matrix is:\n");
     fdisplay(S);
     printf("Transposed matrix is:\n");
     ftranspose(T);

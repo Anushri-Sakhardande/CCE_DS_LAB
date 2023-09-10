@@ -52,12 +52,12 @@ void mdisplay(term X[])
         {
             if(X[CI].row==i && X[CI].col==j)
             {
-                printf("%d",X[CI].val);
+                printf("%d ",X[CI].val);
                 CI++;
             }
             else
             {
-                printf("0");
+                printf("0 ");
             }
         }
         printf("\n");
@@ -86,11 +86,11 @@ void transpose(term T[])
     }
 }
 
-int mmain()
+int main()
 {
     term T[MAX_SIZE];
     init();
-    printf("Entered matrix is;\n");
+    printf("Entered matrix is:\n");
     mdisplay(S);
     printf("Transposed matrix is:\n");
     transpose(T);

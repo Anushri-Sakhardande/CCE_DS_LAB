@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include<stdbool.h>
-#define MAX_SIZE 4
+#define MAX_SIZE 3
 
 typedef struct
 {
@@ -68,19 +68,22 @@ void display()
     }
 }
 
-int cmain()
+int main()
 {
+    int i;
     element e;
-    e.key = 10;
-    insertq(e);
-    e.key = 9;
-    insertq(e);
-    e.key = 4;
-    insertq(e);
-    e.key = 3;
-    insertq(e);
+    printf("Enter elements to be inserted\n");
+    for(i=1;i<=3;i++)
+    {
+        fflush(stdin);
+        scanf("%d",&e.key);
+        insertq(e);
+    }
     display();
-    deleteq();
-    deleteq();
+    printf("Deleting all elements\n");
+    for(i=1;i<=3;i++)
+    {
+        deleteq(e);
+    }
     display();
 }

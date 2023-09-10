@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1694367418 source:c:\users\anush\onedrive\documents\academics\sem3\ds lab\lab_6\evalpre\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<math.h>
+	"ctype.h"
+	"floatStack.h"
+
+1694077915 c:\users\anush\onedrive\documents\academics\sem3\ds lab\lab_6\evalpre\floatstack.h
+	<stdbool.h>
+

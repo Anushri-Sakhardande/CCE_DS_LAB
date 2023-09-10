@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1694367756 source:c:\users\anush\onedrive\documents\academics\sem3\ds lab\lab_6\prefixtoinfix\prefixtoinfix.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	"stringStack.h"
+
+1694077917 c:\users\anush\onedrive\documents\academics\sem3\ds lab\lab_6\prefixtoinfix\stringstack.h
+	<stdbool.h>
+	<string.h>
+

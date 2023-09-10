@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1693891628 source:d:\220953138\lab_5\posttoin\postfixtoinfix\postfixtoinfix.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	"stringStack.h"
+
+1693890810 d:\220953138\lab_5\posttoin\postfixtoinfix\stringstack.h
+	<stdbool.h>
+	<string.h>
+
