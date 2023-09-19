@@ -10,17 +10,17 @@ int precedence(char ch)
     int retVal = -1;
     switch(ch)
     {
-        case '^':
-            retVal = 3;
-            break;
-        case '*':
-        case '/':
-            retVal = 2;
-            break;
-        case '+':
-        case '-':
-            retVal = 1;
-            break;
+    case '^':
+        retVal = 3;
+        break;
+    case '*':
+    case '/':
+        retVal = 2;
+        break;
+    case '+':
+    case '-':
+        retVal = 1;
+        break;
     }
     return retVal;
 }
@@ -28,7 +28,7 @@ int precedence(char ch)
 //to convert the expression
 void convert(char infix[])
 {
-    strcpy(infix,strrev(infix));
+    strrev(infix);
     int ilen = strlen(infix);
     char *prefix = (char*)malloc(ilen);
     element ce;
@@ -43,14 +43,14 @@ void convert(char infix[])
         {
             prefix[pIndex++] = cc;
         }
-        else if(cc == '(')
+        else if(cc == ')')
         {
             ce.key = cc;
             Push(ce);
         }
-        else if(cc == ')')
+        else if(cc == '(')
         {
-            while(!isEmpty() && Peek().key!='(')
+            while(!isEmpty() && Peek().key!=')')
             {
                 prefix[pIndex++] = Pop().key;
             }
@@ -60,19 +60,19 @@ void convert(char infix[])
                 free(prefix);
                 return;
             }
-            else if(Peek().key == '(')
+            else if(Peek().key == ')')
             {
                 Pop();
             }
         }
         else
         {
-          while(!isEmpty() && precedence(Peek().key)>precedence(cc))
-          {
-              prefix[pIndex++] = Pop().key;
-          }
-          ce.key = cc;
-          Push(ce);
+            while(!isEmpty() && precedence(Peek().key) > precedence(cc))
+            {
+                prefix[pIndex++] = Pop().key;
+            }
+            ce.key = cc;
+            Push(ce);
         }
     }
     while(!isEmpty())
@@ -89,5 +89,6 @@ int main()
     char infix[50];
     printf("Enter infix expression\n");
     scanf("%s",infix);
+    printf("Prefix expression:\n");
     convert(infix);
 }

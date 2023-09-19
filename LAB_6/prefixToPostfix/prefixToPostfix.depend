@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1694491975 source:d:\220953138\lab_6\prefixtopostfix\main.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	"stringStack.h"
+
+1693890810 d:\220953138\lab_6\prefixtopostfix\stringstack.h
+	<stdbool.h>
+	<string.h>
+
