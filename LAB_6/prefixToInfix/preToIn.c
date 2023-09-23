@@ -22,16 +22,19 @@ void convert(char* prefix)
     int plen = strlen(prefix);
     char cs[2];
     char opr1[30],opr2[30];
+    //reverse the expression
     strrev(prefix);
     for(pIndex=0;pIndex<plen;pIndex++)
     {
         cs[0]=prefix[pIndex];
         cs[1]='\0';
+        //push the operands onto the stack
         if(isalnum(cs[0]))
         {
             strcpy(ce.key,cs);
             Push(ce);
         }
+        //pop to get operand expressions, put resultant in format and push it back onto stack
         else if(isOperator(cs[0]))
         {
             strcpy(opr1,Pop().key);

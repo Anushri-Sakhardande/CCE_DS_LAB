@@ -9,11 +9,15 @@ void insertq(element e)
 {
     while(!isEmpty(&s1))
     {
+        //push existing elemnts onto new stack
         Push(&s2,s1.s[s1.top]);
+        //pop from previous stack
         Pop(&s1);
     }
+    //finally push new element
     Push(&s1,e);
 
+    //now push from the new stack back to the original stack and from the new stack
     while(!isEmpty(&s2))
     {
         Push(&s1,s2.s[s2.top]);
@@ -32,6 +36,7 @@ element deleteq()
         return ret;
     }
 
+    //simply return the top element
     ret= s1.s[s1.top];
     Pop(&s1);
     return ret;

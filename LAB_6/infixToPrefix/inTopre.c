@@ -28,6 +28,7 @@ int precedence(char ch)
 //to convert the expression
 void convert(char infix[])
 {
+    //reverse the expression
     strrev(infix);
     int ilen = strlen(infix);
     char *prefix = (char*)malloc(ilen);
@@ -39,15 +40,18 @@ void convert(char infix[])
     for(iIndex=0; iIndex<ilen ; iIndex++)
     {
         cc = infix[iIndex];
+        //append operands to expression
         if(isalpha(cc))
         {
             prefix[pIndex++] = cc;
         }
+        //push closing bracket
         else if(cc == ')')
         {
             ce.key = cc;
             Push(ce);
         }
+        //pop till we peek closing bracket and then pop the closing bracket
         else if(cc == '(')
         {
             while(!isEmpty() && Peek().key!=')')
@@ -65,6 +69,7 @@ void convert(char infix[])
                 Pop();
             }
         }
+        //append previous operators if they are of higher preceedence and then push current operator onto stack
         else
         {
             while(!isEmpty() && precedence(Peek().key) > precedence(cc))
@@ -75,11 +80,13 @@ void convert(char infix[])
             Push(ce);
         }
     }
+    //pop all remaining operators from the stack
     while(!isEmpty())
     {
         prefix[pIndex++] = Pop().key;
     }
     prefix[pIndex] = '\0';
+    //answer must be reversed as well
     strcpy(prefix,strrev(prefix));
     printf("%s",prefix);
 }

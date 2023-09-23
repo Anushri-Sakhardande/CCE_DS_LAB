@@ -54,9 +54,9 @@ int Pop(stacks* s)
 }
 
 //display the elements
-void display()
+void display(stacks* s)
 {
-    for(i=top;i>=0;i--)
+    for(i=s->top;i>=0;i--)
     {
         printf("%d",s->key[i]);
     }

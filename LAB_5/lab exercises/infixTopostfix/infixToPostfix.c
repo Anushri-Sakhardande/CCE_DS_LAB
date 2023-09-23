@@ -38,15 +38,18 @@ void convert(char infix[])
     for(iIndex=0; iIndex<ilen ; iIndex++)
     {
         cc = infix[iIndex];
+        //append operands to expression
         if(isalpha(cc))
         {
             postfix[pIndex++] = cc;
         }
+        //push opening bracket
         else if(cc == '(')
         {
             ce.key = cc;
             Push(ce);
         }
+        //pop till we peek opening bracket and then pop the opening bracket
         else if(cc == ')')
         {
             while(!isEmpty() && Peek().key!='(')
@@ -64,6 +67,7 @@ void convert(char infix[])
                 Pop();
             }
         }
+        //append previous operators if they are of higher preceedence and then push current operator onto stack
         else
         {
           while(!isEmpty() && precedence(Peek().key)>=precedence(cc))
@@ -74,6 +78,7 @@ void convert(char infix[])
           Push(ce);
         }
     }
+    //pop all remaining operators from the stack
     while(!isEmpty())
     {
         postfix[pIndex++] = Pop().key;
