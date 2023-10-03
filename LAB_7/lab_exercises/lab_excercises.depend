@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1696307981 source:d:\220953138\lab_7\lab_excercises\linkedlistops.c
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+

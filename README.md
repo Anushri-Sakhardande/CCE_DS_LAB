@@ -19,7 +19,7 @@ Stack Applications - Postfix
 - [x] **Lab 6** :
 Stack Applications - Prefix
 
-- [ ] **Lab 7** :
+- [x] **Lab 7** :
 Linked List
 
 - [ ] **Lab 8** :
