@@ -36,13 +36,13 @@ int i;
         }
         if(exp[i]=='}')
         {
-            if(Pop().key!=flw)
+            if(Pop().key!=flw || isEmpty())
             {
                 printf("Error!!!!");
                 break;
             }
         }
-        if(exp[i]==')')
+        if(exp[i]==')' || isEmpty())
         {
             if(Pop().key!=prt)
             {
@@ -50,7 +50,7 @@ int i;
                 break;
             }
         }
-        if(exp[i]==']')
+        if(exp[i]==']' || isEmpty())
         {
             if(Pop().key!=sqr)
             {
@@ -58,7 +58,7 @@ int i;
                 break;
             }
         }
-        if(exp[i]=='>')
+        if(exp[i]=='>' || isEmpty())
         {
             if(Pop().key!=ang)
             {
@@ -68,7 +68,15 @@ int i;
             }
         }
     }
+    if(!isEmpty())
+    {
+        flag = false;
+    }
     if(flag){
         printf("Correct expression");
+    }
+    else
+    {
+        printf("Error!!!!");
     }
  }

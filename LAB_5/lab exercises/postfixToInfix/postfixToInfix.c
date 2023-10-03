@@ -26,11 +26,13 @@ void convert(char* postfix)
     {
         cs[0]=postfix[pIndex];
         cs[1]='\0';
+        //push the operands onto the stack
         if(isalnum(cs[0]))
         {
             strcpy(ce.key,cs);
             Push(ce);
         }
+        //pop to get operand expressions, put resultant in format and push it back onto stack
         else if(isOperator(cs[0]))
         {
             strcpy(opr2,Pop().key);

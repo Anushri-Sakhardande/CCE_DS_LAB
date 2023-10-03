@@ -25,6 +25,7 @@ void evaluate(char* postfix)
     element ce;
     int pIndex;
     float oprVal[125];
+    //get the values of the variables
     for(i=0; i<125; i++)
     {
         oprVal[i] = 0;
@@ -41,6 +42,7 @@ void evaluate(char* postfix)
     for(pIndex=0; pIndex<plen; pIndex++)
     {
         cc = postfix[pIndex];
+        //push the operands onto the stack
         if(isalpha(cc))
         {
             ce.key = oprVal[cc];
@@ -51,6 +53,7 @@ void evaluate(char* postfix)
             ce.key = (float)(cc-'0');
             Push(ce);
         }
+        //pop the operand expressions,evaluate and push resultant back onto stack
         else if(isOperator(cc))
         {
             float op2 = Pop().key;

@@ -10,6 +10,7 @@ element mstack[MAX];
 int *tops,*bnds;
 int i;
 
+//initialize the tops and boundaries
 void init(int N){
     int SZ = MAX/N;
     tops = (int*)malloc(N*sizeof(int));
@@ -23,6 +24,7 @@ void init(int N){
     bnds[N]=MAX;
 }
 
+//push onto the stack 
 void Push(int x,element e){
     if(tops[x]<bnds[x+1]){
         tops[x]++;
@@ -33,6 +35,7 @@ void Push(int x,element e){
     }
 }
 
+//pop from the stack
 element Pop(int x){
     element ret;
     ret.key =-1;
