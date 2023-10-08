@@ -102,7 +102,7 @@ void insertAfter(int value, int afterValue)
         temp->next = current->next;
         current->next = temp;
     }
-    //if node isn't found
+    //if node is not found
     else
     {
         printf("Node not found in list");
@@ -147,7 +147,7 @@ void deleteNode(int value)
         }
         free(current);
     }
-    //if elemement not found
+    //if element not found
     else
     {
         printf("Element not present");
@@ -209,19 +209,20 @@ void sort()
     while (outerCurrent != NULL)
     {
         nptr innerPrevious = NULL;
-        nptr innerCurrent = outerCurrent;
+        nptr innerCurrent = head;
         while (innerCurrent->next != NULL)
         {
-            if (innerCurrent->data > innerCurrent->next->data)
+            nptr innerNext = innerCurrent->next;
+            if (innerCurrent->data > innerNext->data)
             {
-                nptr innerNext = innerCurrent->next;
                 if (innerPrevious != NULL)
                 {
                     innerPrevious->next = innerNext;
                 }
+                // Update head if needed
                 else
                 {
-                    head = innerNext; // Update head if needed
+                    head = innerNext;
                 }
                 innerCurrent->next = innerNext->next;
                 innerNext->next = innerCurrent;
@@ -230,7 +231,7 @@ void sort()
             else
             {
                 innerPrevious = innerCurrent;
-                innerCurrent = innerCurrent->next;
+                innerCurrent = innerNext;
             }
         }
         outerCurrent = outerCurrent->next;
@@ -248,7 +249,8 @@ void deleteAlternate()
     }
 
     nptr current = head;
-    while(current!=NULL && current->next != NULL){
+    while(current!=NULL && current->next != NULL)
+    {
         nptr currentNext = current->next;
         current->next = currentNext->next;
         free(currentNext);
@@ -259,24 +261,27 @@ void deleteAlternate()
 // insert into sorted array
 void insertSorted(int value)
 {
-    if (head == NULL)
-    {
-        printf("List is empty");
-        return;
-    }
-
     nptr temp = createNode(value);
     nptr current = head;
     nptr previous = NULL;
-    while (current->next->data <= value && current!=NULL)
+    //if the list is empty,we insert as the first
+    if (head == NULL)
+    {
+        head = temp;
+        return;
+    }
+    while (current != NULL && current->data <= value)
     {
         previous = current;
         current = current->next;
     }
-    if(previous == NULL)
+    //insert at the beginning of the list 
+    if (previous == NULL)
     {
+        temp->next = head;
         head = temp;
     }
+    //insert in the middle or at the end of the list.
     else
     {
         temp->next = previous->next;
@@ -288,7 +293,7 @@ int main()
 {
     int choice;
     int value1, value2;
-    printf("Enter\n 1)Insert an element before another element in the existing list\n 2) Insert an element after another element in the existing list\n 3) Delete a given element from the list\n 4) Traverse the list\n 5) Reverse the list\n 6) Sort the list\n 7) Delete every alternate node in the list\n 8) Insert an element in a sorted list such that the order is maintained.");
+    printf("Enter\n 1)Insert an element before another element in the existing list\n 2) Insert an element after another element in the existing list\n 3) Delete a given element from the list\n 4) Traverse the list\n 5) Reverse the list\n 6) Sort the list\n 7) Delete every alternate node in the list\n 8) Insert an element in a sorted list such that the order is maintained\n");
     scanf("%d",&choice);
     do
     {
@@ -333,5 +338,6 @@ int main()
         }
         printf("\nEnter 0 to terminate or another number to continue");
         scanf("%d", &choice);
-    } while (choice != 0);
+    }
+    while (choice != 0);
 }

@@ -1,0 +1,28 @@
+# depslib dependency file v1.0
+1696355676 source:c:\users\anush\onedrive\documents\academics\sem3\ds lab\lab_7\additional\create_traverse.c
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+
+1584205420 source:c:\users\anush\onedrive\documents\academics\sem3\ds lab\lab_7\additional\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1696432822 source:c:\users\anush\onedrive\documents\academics\sem3\ds lab\lab_7\additional\merge_list2.c
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+
+1696427434 source:c:\users\anush\onedrive\documents\academics\sem3\ds lab\lab_7\additional\queue_ll.c
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+
+1696427541 source:c:\users\anush\onedrive\documents\academics\sem3\ds lab\lab_7\additional\stack_ll.c
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+	<stdio.h>
+	<stdbool.h>
+	<stdlib.h>
+
