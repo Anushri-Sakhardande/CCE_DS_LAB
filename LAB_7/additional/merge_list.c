@@ -83,6 +83,7 @@ nptr merge(nptr xHead, nptr yHead)
     return mHead;
 }
 
+//TODO: Rewrite main function
 int main() {
     // Create two sorted linked lists
     nptr xHead = createNode(1);

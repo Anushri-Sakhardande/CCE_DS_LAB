@@ -12,7 +12,7 @@ struct student
 int main()
 {
     FILE *ptr;
-    ptr = fopen("C:\Users\anush\OneDrive\Documents\ACADEMICS\SEM3\DS LAB\LAB_2\additional\records.txt","w");
+    ptr = fopen("C:\ Users\anush\OneDrive\Documents\ACADEMICS\SEM3\DS LAB\LAB_2\additional\records.txt","w");
 
     return 0;
 }

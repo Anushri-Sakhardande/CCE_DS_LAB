@@ -42,25 +42,25 @@ int i;
                 break;
             }
         }
-        if(exp[i]==')' || isEmpty())
+        if(exp[i]==')')
         {
-            if(Pop().key!=prt)
+            if(Pop().key!=prt || isEmpty())
             {
                 printf("Error!!!!");
                 break;
             }
         }
-        if(exp[i]==']' || isEmpty())
+        if(exp[i]==']')
         {
-            if(Pop().key!=sqr)
+            if(Pop().key!=sqr || isEmpty())
             {
                 printf("Error!!!!");
                 break;
             }
         }
-        if(exp[i]=='>' || isEmpty())
+        if(exp[i]=='>')
         {
-            if(Pop().key!=ang)
+            if(Pop().key!=ang || isEmpty())
             {
                 printf("Error!!!!");
                 flag=false;

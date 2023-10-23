@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1697516935 source:d:\220953138\lab_9\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1697521421 source:d:\220953138\lab_9\circularops.c
+	<stdio.h>
+	<stdlib.h>
+
+1697521937 source:d:\220953138\lab_9\polynomial.c
+	<stdio.h>
+	<stdlib.h>
+

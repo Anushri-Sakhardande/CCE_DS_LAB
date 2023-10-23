@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include<string.h>
 #include<math.h>
-#include"ctype.h"
+#include<ctype.h>
 #include"floatStack.h"
 
 //check if character is operator

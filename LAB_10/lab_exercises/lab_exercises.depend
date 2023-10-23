@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1697983560 source:c:\users\anush\onedrive\documents\academics\sem3\ds lab\lab_10\lab_exercises\main.c
+	"tree.h"
+
+1697983654 c:\users\anush\onedrive\documents\academics\sem3\ds lab\lab_10\lab_exercises\tree.h
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+

@@ -21,14 +21,14 @@ void concatenate(char str1[], char str2[])
     {
         str1[i + len1] = str2[i];
     }
-    str1[len1+len2]='\0';
+    str1[len1 + len2] = '\0';
 }
 
 // Function for string comparison
 int compare(char str1[], char str2[])
 {
     int i, difference = 0;
-    for (i = 0; str1[i] != '\0' &&  str2[i] != '\0'; i++)
+    for (i = 0; str1[i] != '\0' && str2[i] != '\0'; i++)
     {
         if (str1[i] != str2[i])
         {
@@ -53,7 +53,7 @@ void insert(char str1[], char str2[], int location)
     {
         str1[location + i] = str2[i];
     }
-    str1[len1+len2]='\0';
+    str1[len1 + len2] = '\0';
 }
 
 // Function for string deletion
@@ -78,14 +78,14 @@ int deletion(char str1[], char str2[])
             break;
         }
     }
-    //printf("%d%d", found, location);
+    // printf("%d%d", found, location);
     if (found == 1)
     {
-        for (i = 0; i <= len1-location-len2-1; i++)
+        for (i = 0; i <= len1 - location - len2 - 1; i++)
         {
             str1[location + i] = str1[location + len2 + i];
         }
-        str1[len1-len2]='\0';
+        str1[len1 - len2] = '\0';
     }
     else
     {
@@ -101,53 +101,54 @@ int main()
     int loc_insert;
     char choice;
 
-    //choose the string handling function required
+    // choose the string handling function required
     printf("Enter l for length\n");
     printf("Enter c for concatenation\n");
     printf("Enter p for compare\n");
     printf("Enter i for insert\n");
     printf("Enter d for deletion\n");
-    scanf("%c",&choice);
-    
+    scanf("%c", &choice);
+
     // Input the required values
     printf("Enter a string:");
     scanf(" %[^\n]s", str1);
-    
-    switch(choice){
-        case 'l':
-                printf("Length of the string is:%d",length(str1));
-                break;
-        case 'c':
-                printf("Enter a string");
-                scanf("%s", str2);
-                concatenate(str1,str2);
-                printf("Concatenated strings:%s",str1);
-                break;
-        case 'p':
-                printf("Enter a string");
-                scanf("%s", str2);
-                printf("String Comparison:%d",compare(str1,str2));
-                break;
-        case 'i':
-                printf("Enter a string");
-                scanf("%s", str2);
-                printf("Enter location to insert string");
-                scanf("%d", &loc_insert);
-                insert(str1,str2,loc_insert);
-                printf("Inserted string:%s",str1);
-                break;
-        case 'd':
-                printf("Enter a string");
-                scanf("%s", str2);
-                int found = deletion(str1,str2);
-                if(found)
-                {
-                    printf("Deleted string:%s",str1);
-                }
-                break;
-        default:
-                printf("Incorrect Input");
+
+    switch (choice)
+    {
+    case 'l':
+        printf("Length of the string is:%d", length(str1));
+        break;
+    case 'c':
+        printf("Enter a string");
+        scanf("%s", str2);
+        concatenate(str1, str2);
+        printf("Concatenated strings:%s", str1);
+        break;
+    case 'p':
+        printf("Enter a string");
+        scanf("%s", str2);
+        printf("String Comparison:%d", compare(str1, str2));
+        break;
+    case 'i':
+        printf("Enter a string");
+        scanf("%s", str2);
+        printf("Enter location to insert string");
+        scanf("%d", &loc_insert);
+        insert(str1, str2, loc_insert);
+        printf("Inserted string:%s", str1);
+        break;
+    case 'd':
+        printf("Enter a string");
+        scanf("%s", str2);
+        int found = deletion(str1, str2);
+        if (found)
+        {
+            printf("Deleted string:%s", str1);
+        }
+        break;
+    default:
+        printf("Incorrect Input");
     }
-    
+
     return 0;
 }
