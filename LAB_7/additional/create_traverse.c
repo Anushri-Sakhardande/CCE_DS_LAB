@@ -26,28 +26,28 @@ nptr createNode(int value)
 }
 
 //recursively insert to the end of the list
-nptr insertAfter(nptr current,int data)
+nptr insertAfter(nptr *current,int data)
 {
-    if(current == NULL)
+    if(*current == NULL)
     {
-        return createNode(data);
+        *current = createNode(data);
     }
     else
     {
-        current->next = insertAfter(current->next,data);
+        insertAfter(&((*current)->next), data);
     }
     return head;
 }
 
 //traverse through linked list
-nptr traverse(nptr current)
+void traverse(nptr current)
 {
     if(current == NULL)
     {
         return;
     }
     else
-    print("%d ",current->data);
+    printf("%d ",current->data);
     traverse(current->next);
 }
 
@@ -55,10 +55,10 @@ int main() {
     nptr head = NULL;
 
     // Insert nodes at the end of the linked list
-    head = insertAfter(head, 1);
-    head = insertAfter(head, 2);
-    head = insertAfter(head, 3);
-    head = insertAfter(head, 4);
+    insertAfter(&head, 1);
+    insertAfter(&head, 2);
+    insertAfter(&head, 3);
+    insertAfter(&head, 4);
 
     // Traverse and print the linked list
     printf("Linked List: ");
