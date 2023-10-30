@@ -4,6 +4,7 @@
 #define MAX_SIZE 60
 #include<stdbool.h>
 #include<string.h>
+#include<stdio.h>
 
 typedef struct
 {

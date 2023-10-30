@@ -51,3 +51,27 @@ nptr traverse(nptr current)
     traverse(current->next);
 }
 
+int main() {
+    nptr head = NULL;
+
+    // Insert nodes at the end of the linked list
+    head = insertAfter(head, 1);
+    head = insertAfter(head, 2);
+    head = insertAfter(head, 3);
+    head = insertAfter(head, 4);
+
+    // Traverse and print the linked list
+    printf("Linked List: ");
+    traverse(head);
+    printf("\n");
+
+    // Clean up and free the memory used by the linked list
+    nptr current = head;
+    while (current != NULL) {
+        nptr temp = current;
+        current = current->next;
+        free(temp);
+    }
+
+    return 0;
+}
