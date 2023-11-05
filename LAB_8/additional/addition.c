@@ -55,11 +55,11 @@ nptr add(nptr num1, nptr num2)
         int sum = carry;
         if (num1 != NULL) {
             sum += num1->data;
-            num1 = num1->next;
+            num1 = num1->previous;
         }
         if (num2 != NULL) {
             sum += num2->data;
-            num2 = num2->next;
+            num2 = num2->previous;
         }
 
         carry = sum / 10;
@@ -84,6 +84,9 @@ int main()
         int digit = num1Str[i] - '0';
         insertRear(digit,&num1);
     }
+    while(num1->next!=NULL){
+        num1 = num1->next;
+    }
 
     // Read the second long positive integer as a string and insert its digits into num2
     char num2Str[100];
@@ -93,6 +96,9 @@ int main()
     for (int i = 0; i < len2; i++) {
         int digit = num2Str[i] - '0';
         insertRear(digit,&num2);
+    }
+    while(num2->next!=NULL){
+        num2 = num2->next;
     }
 
     nptr result = add(num1, num2);

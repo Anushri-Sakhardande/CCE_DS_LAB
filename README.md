@@ -22,16 +22,16 @@ Stack Applications - Prefix
 - [x] **Lab 7** :
 Linked List
 
-- [ ] **Lab 8** :
+- [x] **Lab 8** :
 Doubly linked list
 
-- [ ] **Lab 9** :
+- [x] **Lab 9** :
 Polynomials Using linked list and circular list
 
-- [ ] **Lab 10** :
+- [x] **Lab 10** :
 Trees
 
-- [ ] **Lab 11** :
+- [x] **Lab 11** :
 Binary search trees
 
 - [ ] **Lab 12** :
