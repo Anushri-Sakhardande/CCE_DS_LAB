@@ -59,7 +59,7 @@ void IterativePostorder(Tptr node)
             if(temp==NULL)
             {
                 temp = Pop();
-                printf("%d",temp->data);
+                printf("%d ",temp->data);
                 while(!isEmpty() && temp==peek()->rightchild)
                 {
                     temp = Pop();
@@ -77,24 +77,8 @@ void IterativePostorder(Tptr node)
 //Return the parent of a given node
 Tptr ParentNode(Tptr node,int target)
 {
-    if(root)
-    {
-        if(root->leftchild->data==target || root->rightchild->data==target)
-        {
-            return root;
-        }
-        ParentNode(root->leftchild,target);
-        ParentNode(root->rightchild,target);
-    }
-}
-
-//Find the depth of a given tree
-int Depth(Tptr node)
-{
-    int totalCount=0;
     for(;;)
     {
-        int count=0;
         for(; node;node = node->leftchild)
         {
             Push(node);
@@ -102,52 +86,67 @@ int Depth(Tptr node)
         node = Pop();
         if(node == NULL)
         {
-            if(count>totalCount)
-                totalCount = count;
             break;
         }
-        count++;
+        if ((node->leftchild && node->leftchild->data == target) || (node->rightchild && node->rightchild->data == target)) {
+            return node;
+        }
         node = node->rightchild;
     }
-    return totalCount;
+}
+
+//Find the depth of a given tree
+int treeDepth(Tptr node)
+{
+    if (node == NULL) {
+        return 0; // The depth of an empty tree is 0
+    }
+
+    int leftDepth = treeDepth(node->leftchild);
+    int rightDepth = treeDepth(node->rightchild);
+    return (leftDepth > rightDepth) ? (leftDepth + 1) : (rightDepth + 1);
 }
 
 //print all the ancestors of a node
-void Ancestors(Tptr root, int targetNode)
+bool Ancestors(Tptr node, int target)
 {
-    if ((root->leftchild && root->leftchild->data == targetNode) || (root->rightchild && root->rightchild->data == targetNode))
-    {
-        printf("%d ", root->data);
-        return;
-    }
-    if (root->leftchild)
-    {
-        Ancestors(root->leftchild, targetNode);
-    }
-    if (root->rightchild)
-    {
-        Ancestors(root->rightchild, targetNode);
-    }
+  if (node == NULL)
+     return false;
+ 
+  if (node->data == target)
+     return true;
+ 
+  if (Ancestors(node->leftchild, target) || Ancestors(node->rightchild, target) )
+  {
+    printf("%d ",node->data);
+    return true;
+  }
+
+  return false;
 }
 
 //count the number of leaf nodes in a tree
 int leafNodes(Tptr node)
 {
-    int totalCount=0;
-    for(;;)
-    {
-        for(; node;node = node->leftchild)
-        {
+    if (node == NULL) {
+        printf("Tree is empty.\n");
+        return 0;
+    }
+    int totalCount = 0;
+    for (;;) {
+        for (; node; node = node->leftchild) {
             Push(node);
         }
         node = Pop();
-        if(node == NULL)
-        {
-            totalCount ++;
+        if (node == NULL) {
             break;
+        }
+        if (node->leftchild == NULL && node->rightchild == NULL) {
+            totalCount++;
         }
         node = node->rightchild;
     }
+
     return totalCount;
 }
 
@@ -175,8 +174,15 @@ int main()
             case 1:
                 // Create the binary tree
                 printf("Enter the number of nodes: ");
-                scanf("%d", &N);
-                createTree(N);
+                //scanf("%d", &N);
+                //createTree(N);
+                root = createNode(5);
+                root->leftchild = createNode(7);
+                root->leftchild->rightchild= createNode(10);
+                root->rightchild = createNode(8);
+                root->rightchild->rightchild = createNode(8);
+                root->rightchild->leftchild = createNode(2);
+                root->leftchild->rightchild->rightchild = createNode(3);
                 break;
 
             case 2:
@@ -200,7 +206,8 @@ int main()
             case 5:
                 // Find Parent of a Node
                 printf("Enter the value of the target node: ");
-                scanf("%d", &target);
+                //scanf("%d", &target);
+                target = 7;
                 Tptr parent = ParentNode(root, target);
                 if (parent) {
                     printf("Parent of %d is %d\n", target, parent->data);
@@ -211,13 +218,14 @@ int main()
 
             case 6:
                 // Find Depth of the Tree
-                printf("Depth of the tree is: %d\n", Depth(root));
+                printf("Depth of the tree is: %d\n", treeDepth(root));
                 break;
 
             case 7:
                 // Print Ancestors of a Node
                 printf("Enter the value of the target node: ");
-                scanf("%d", &target);
+                //scanf("%d", &target);
+                target = 3;
                 printf("Ancestors of %d: ", target);
                 Ancestors(root,target);
                 break;

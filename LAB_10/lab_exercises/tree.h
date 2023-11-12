@@ -36,7 +36,7 @@ void createTree(int N)
 
     for(int i=0;i<N;i++)
     {
-        printf("Enter data for node %d",i);
+        printf("Enter data for node %d: ",i);
         scanf("%d",&cData);
         Tptr temp = createNode(cData);
         //assign root node
@@ -47,7 +47,7 @@ void createTree(int N)
 
         else
         {
-            printf("Enter direction");
+            printf("Enter direction: ");
             scanf("%s",dir);
             current = root;
             previous = NULL;

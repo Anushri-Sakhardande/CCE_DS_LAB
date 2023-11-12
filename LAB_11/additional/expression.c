@@ -1,5 +1,3 @@
-//error 😭
-
 #include <stdio.h>
 #include <stdlib.h>
 #include<stdbool.h>
@@ -14,6 +12,15 @@ typedef struct TNode
     Tptr leftchild;
     Tptr rightchild;
 }TNode;
+
+//Create nodes in the tree
+Tptr createNode(char val)
+{
+    Tptr temp =(Tptr)malloc(sizeof(TNode));
+    temp->data = val;
+    temp->leftchild = temp->rightchild = NULL;
+    return temp;
+}
 
 Tptr stack[MAX];
 int top=-1;
@@ -36,7 +43,6 @@ void Push(Tptr e)
 {
     if(isFull())
     {
-        printf("Stack is full");
         return;
     }
     stack[++top]=e;
@@ -45,26 +51,16 @@ void Push(Tptr e)
 //pop element from stack
 Tptr Pop()
 {
-    Tptr popped;
-    popped->data = '\0';
+    Tptr popped=createNode('\0');
     if(isEmpty())
     {
-        printf("Stack is empty");
+        free(popped);
     }
     else
     {
         popped=stack[top--];
     }
     return popped;
-}
-
-//Create nodes in the tree
-Tptr createNode(char val)
-{
-    Tptr temp =(Tptr)malloc(sizeof(TNode));
-    temp->data = val;
-    temp->leftchild = temp->rightchild = NULL;
-    return temp;
 }
 
 //check if character is operator
@@ -114,7 +110,7 @@ void inOrderTraversal(Tptr root)
 
 int main()
 {
-    char postfix[] = "ab*c+d-";
+    char postfix[] = "ab*cd/-";
     Tptr expressionTree = createExpression(postfix);
 
     if (expressionTree != NULL)

@@ -48,25 +48,57 @@ void printInorder(Tptr root)
 
 int main() {
 
-    // Insert nodes into the binary tree
-    root = createRecursive(root,5);
-    root = createRecursive(root,3);
-    root = createRecursive(root,8);
-    root = createRecursive(root,2);
-    root = createRecursive(root,4);
+    Tptr root = NULL;
+    int choice, value;
 
-    // Print the binary tree using different tree traversal methods
-    printf("Binary Tree (In-Order): ");
-    printInorder(root);
-    printf("\n");
+    do {
+        printf("\nBinary Search Tree Operations\n");
+        printf("1. Insert Node\n");
+        printf("2. Inorder Traversal\n");
+        printf("3. Preorder Traversal\n");
+        printf("4. Postorder Traversal\n");
+        printf("5. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
 
-    printf("Binary Tree (Pre-Order): ");
-    printPreorder(root);
-    printf("\n");
+        switch (choice) {
+            case 1:
+                // Insert Node
+                printf("Enter the value to insert: ");
+                scanf("%d", &value);
+                root = createRecursive(root, value);
+                break;
 
-    printf("Binary Tree (Post-Order): ");
-    printPostorder(root);
-    printf("\n");
+            case 2:
+                // Inorder Traversal
+                printf("Inorder Traversal: ");
+                printInorder(root);
+                printf("\n");
+                break;
+
+            case 3:
+                // Preorder Traversal
+                printf("Preorder Traversal: ");
+                printPreorder(root);
+                printf("\n");
+                break;
+
+            case 4:
+                // Postorder Traversal
+                printf("Postorder Traversal: ");
+                printPostorder(root);
+                printf("\n");
+                break;
+
+            case 5:
+                // Exit
+                printf("Exiting the program.\n");
+                break;
+
+            default:
+                printf("Invalid choice. Please try again.\n");
+        }
+    } while (choice != 5);
 
     return 0;
 }

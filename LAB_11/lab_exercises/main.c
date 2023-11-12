@@ -108,46 +108,36 @@ Tptr findMinimum(Tptr root){
 }
 
 //delete node from Binary Search Tree
-Tptr deleteBST(int key,Tptr root)
-{
-    if(root==NULL)
-    {
-        printf("Not present");
-        return NULL;
+Tptr deleteBST(int key, Tptr root) {
+    if (root == NULL) {
+        printf("Element not present\n");
+        return root;
     }
-    if(key<root->data)//if key is smaller than root send to the left subtree
-    {
-        root->leftchild = deleteBST(key,root->rightchild);
-    }
-    else if(key>root->data)//if root is smaller than key send to the right subtree
-    {
-        root->rightchild = deleteBST(key,root->rightchild);
-    }
-    else 
-    {
+
+    if (key < root->data) {
+        root->leftchild = deleteBST(key, root->leftchild);
+    } else if (key > root->data) {
+        root->rightchild = deleteBST(key, root->rightchild);
+    } else {
         Tptr temp;
-        if(root->leftchild!=NULL && root->rightchild!=NULL) // if element to be deleted has both children
-        {
+        if (root->leftchild != NULL && root->rightchild != NULL) {// Node with two children
             temp = findMinimum(root->rightchild);
             root->data = temp->data;
-            root->rightchild = deleteBST(temp->data,root->rightchild);
-        }
-        else // if element to be deleted has one child
-        {
+            root->rightchild = deleteBST(temp->data, root->rightchild);
+        } else {// Node with one child or no child
             temp = root;
-            if(root->leftchild==NULL)
-            {
+            if (root->leftchild == NULL) {
                 root = root->rightchild;
-            }
-            else if(root->rightchild==NULL)
-            {
+            } else if (root->rightchild == NULL) {
                 root = root->leftchild;
             }
             free(temp);
         }
     }
+
     return root;
 }
+
 
 void search(Tptr root,int key,bool *flag){
     if (root) {
@@ -224,9 +214,6 @@ int main() {
                 printf("Invalid choice. Please try again.\n");
         }
     } while (choice != 6);
-
-    // Free memory for the BST nodes before exiting
-    // You should implement a function to free the memory properly.
 
     return 0;
 }

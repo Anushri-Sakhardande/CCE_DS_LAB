@@ -277,20 +277,87 @@ void reverse()
 
 int main()
 {
-    insertRear(10);
-    insertRear(20);
-    insertRear(30);
-    insertRear(10);
-    insertRear(15);
-    insertRear(90);
-    traverse();
-    deleteRear();
-    traverse();
-    deletePosition(32);
-    traverse();
-    insertBefore(40,10);
-    traverse();
-    printf("rev:");
-    reverse();
-    traverse();
+    int choice, value, position, afterValue, beforeValue;
+    
+    head = NULL;
+    tail = NULL;
+    
+    while (1)
+    {
+        printf("\nDoubly Linked List Operations:\n");
+        printf("1. Insert at the rear end\n");
+        printf("2. Delete from the rear end\n");
+        printf("3. Insert at a given position\n");
+        printf("4. Delete from a given position\n");
+        printf("5. Insert after a value\n");
+        printf("6. Insert before a value\n");
+        printf("7. Traverse the list\n");
+        printf("8. Reverse the list\n");
+        printf("9. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+        
+        switch (choice)
+        {
+            case 1:
+                printf("Enter the value to insert: ");
+                scanf("%d", &value);
+                insertRear(value);
+                break;
+                
+            case 2:
+                deleteRear();
+                break;
+                
+            case 3:
+                printf("Enter the value to insert: ");
+                scanf("%d", &value);
+                printf("Enter the position to insert: ");
+                scanf("%d", &position);
+                insertPosition(value, position);
+                break;
+                
+            case 4:
+                printf("Enter the position to delete: ");
+                scanf("%d", &position);
+                deletePosition(position);
+                break;
+                
+            case 5:
+                printf("Enter the value to insert: ");
+                scanf("%d", &value);
+                printf("Enter the value to insert after: ");
+                scanf("%d", &afterValue);
+                insertAfter(value, afterValue);
+                break;
+                
+            case 6:
+                printf("Enter the value to insert: ");
+                scanf("%d", &value);
+                printf("Enter the value to insert before: ");
+                scanf("%d", &beforeValue);
+                insertBefore(value, beforeValue);
+                break;
+                
+            case 7:
+                printf("Doubly Linked List: ");
+                traverse();
+                break;
+                
+            case 8:
+                reverse();
+                printf("Doubly Linked List has been reversed.");
+                break;
+                
+            case 9:
+                printf("Exiting program.\n");
+                exit(0);
+                break;
+                
+            default:
+                printf("Invalid choice. Please enter a valid option.\n");
+        }
+    }
+    
+    return 0;
 }
